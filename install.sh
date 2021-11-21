@@ -45,5 +45,4 @@ exit
 chmod +x  /home/config.sh
 sudo mv  /home/config.sh /tmp/ramdisk/impish/home
 chroot /tmp/ramdisk/impish /bin/sh -i ./home/config.sh
-chroot  /tmp/ramdisk/impish 
-
+sudo chroot /tmp/ramdisk/impish/ screenfetch
