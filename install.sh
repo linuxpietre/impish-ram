@@ -30,14 +30,14 @@ dpkg-reconfigure locales
 dpkg-reconfigure -f noninteractive tzdata
 apt-get upgrade -y 
 hostnamectl set-hostname impish
-sudo apt-get install htop -y
+sudo apt-get install htop screenfech -y
 apt-get -f install
 apt-get clean
-adduser impish
-addgroup impish sudo
-addgroup impish adm
-addgroup impish users
+
+exit
 +
 chmod +x  /home/config.sh
 sudo mv  /home/config.sh /tmp/ramdisk/impish/home
 chroot /tmp/ramdisk/impish /bin/sh -i ./home/config.sh
+chroot  /tmp/ramdisk/impish 
+
