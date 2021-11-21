@@ -1,9 +1,17 @@
 #! /bin/sh
 sudo apt install debootstrap -y
+
+echo " CREANDO RAMDISK EN: /tmp/ramdisk"
+sleep 3
+
 sudo mkdir /tmp/ramdisk
-mount -t tmpfs none /tmp/ramdisk -o size=2048M
+mount -t tmpfs none /tmp/ramdisk -o size=4096M
 sudo mkdir /tmp/ramdisk/impish
+echo " CREANDO DEBOOSTRAP EN: /tmp/ramdisk/impish"
+sleep 3
 sudo debootstrap --foreign impish /tmp/ramdisk/impish
+echo " MONTANDO PARTICIONES DEL HOST EN LA JAULA"
+sleep 3
 sudo mount -o bind /dev /tmp/ramdisk/impish/dev
 sudo mount -o bind /dev/pts /impish/dev/pts
 sudo mount -t sysfs sys /tmp/ramdisk/impish/sys 
