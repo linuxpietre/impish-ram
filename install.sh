@@ -29,7 +29,7 @@ update-locale LC_ALL=es_ES.UTF-8 LANG=es_ES.UTF-8 LC_MESSAGES=POSIX
 dpkg-reconfigure -f noninteractive tzdata
 apt-get upgrade -y 
 hostnamectl set-hostname impish
-sudo apt-get install htop screenfech -y
+sudo apt-get install htop screenfetch -y
 apt-get -f install
 apt-get clean
 exit
