@@ -26,14 +26,12 @@ echo "Reconfigurando parametros locales"
 locale-gen es_ES.UTF-8
 export LC_ALL="es_ES.UTF-8"
 update-locale LC_ALL=es_ES.UTF-8 LANG=es_ES.UTF-8 LC_MESSAGES=POSIX
-dpkg-reconfigure locales
 dpkg-reconfigure -f noninteractive tzdata
 apt-get upgrade -y 
 hostnamectl set-hostname impish
 sudo apt-get install htop screenfech -y
 apt-get -f install
 apt-get clean
-
 exit
 +
 chmod +x  /home/config.sh
